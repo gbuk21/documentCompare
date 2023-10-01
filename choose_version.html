@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Sight Words</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+.w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+.w3-half img:hover{opacity:1}
+</style>
+<body>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+  <div class="w3-container">
+    <h3 class="w3-padding-10"><a href="/index/" <b>Document Compare</b></a></h3>
+  </div>
+  <div class="w3-container">
+    <h4 class="w3-padding-30"><b>Welcome<br>{{name}}</b></h4>
+  </div>
+
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding">
+  <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="w3_open()">?</a>
+  <span>Math</span>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:340px;margin-right:40px">
+
+  <!-- Header -->
+  <div class="w3-container" style="margin-top:40px" id="showcase">
+    <h4 class="w3-jumbo"><b>Document compare versions</b></h4>
+  </div>
+
+
+  <!-- Contact -->
+
+  <div class="w3-container" id="contact" style="margin-top:35px">
+
+    <h4 class="w3-xlarge"><b>Choose versions to compare.</b></h4>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+<form  action="{{ url_for('show_compare',document_name=document_name) }}" method="post">
+
+   <div>
+  <br><br>
+  Version1: <select name="version1" id="version1">
+    <option value="" selected="selected">Please selection first version to compare</option>
+  </select>
+  <br><br>
+  Version2: <select name="version2" id="version2">
+    <option value="" selected="selected">Please selection second version to compare</option>
+  </select>
+  <br><br>
+  <input type="submit" value="Submit">   </div>
+</form>
+
+</div>
+
+   <script type="text/javascript">
+window.onload = function() {
+  var versions={{versions|tojson}};
+
+  var document_name={{document_name|tojson}};
+  var version1 = document.getElementById("version1");
+  var version2 = document.getElementById("version2");
+    version1.length = 1;
+    version1.length = 1;
+    //display correct values
+    for (var y in versions) {
+      version1.options[version1.options.length] = new Option(versions[y]['CurrentVersion'],versions[y]['CurrentVersion']);
+    }   
+    for (var z in versions) {
+      version2.options[version2.options.length] = new Option(versions[z]['CurrentVersion'],versions[z]['CurrentVersion']);
+    }  
+    };
+
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+  if (window.speechSynthesis.speaking) {
+             window.speechSynthesis.cancel();
+  };
+}
+
+  </script>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+  <script src="/templates/analytics.js"></script>
+
+</body>
+</html>
