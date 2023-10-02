@@ -65,64 +65,68 @@ body {font-size:16px;}
 <form  action="{{ url_for('show_compare',document_name=document_name) }}" method="post">
 
    <div>
-       <label for="text1">LineNumber</label><br>
-       <textarea name="line1" id="ine1"  rows="1" cols="5" wrap="soft"> </textarea> 
+<input type="checkbox" id="showonlydifferences" name="showonlydifferences">
+<label for="showonlydifferences"> Show Only Differences</label>
+<input type="checkbox" id="showonlyapproved" name="showonlyapproved" >
+<label for="showonlyapproved"> Show Only Approved</label><br>
+       <label for="Line1">LineNumber</label><br>
+       <textarea name="Line1" id="Line1"  rows="1" cols="5" wrap="soft"> </textarea> 
        <textarea name="old1" id="old1"  rows="2" cols="30" wrap="soft"> </textarea> 
        <textarea name="new1" id="new1"  rows="2" cols="30" wrap="soft"> </textarea> 
 <input type="checkbox" id="differ1" name="differ1">
-<label for="check1"> differs?</label>
-<input type="checkbox" id="approve2" name="approve1" >
-<label for="check2"> approved?</label><br>
+<label for="differ1"> differs?</label>
+<input type="checkbox" id="approve1" name="approve1" >
+<label for="approve1"> approved?</label><br>
        <textarea name="Line2" id="Line2"  rows="1" cols="5" wrap="soft"> </textarea> 
        <textarea name="old2" id="old2"  rows="2" cols="30" wrap="soft"> </textarea> 
-       <textarea name="text6" id="text6"  rows="2" cols="30" wrap="soft"> </textarea> 
-<input type="checkbox" id="check3" name="check3">
-<input type="checkbox" id="check4" name="check4" ><br>
+       <textarea name="new2" id="new2"  rows="2" cols="30" wrap="soft"> </textarea> 
+<input type="checkbox" id="differ2" name="differ2">
+<input type="checkbox" id="approve2" name="approve2" ><br>
        <textarea name="Line3" id="Line3"  rows="1" cols="5" wrap="soft"> </textarea> 
-       <textarea name="text8" id="text8"  rows="2" cols="30" wrap="soft"> </textarea> 
-       <textarea name="text9" id="text9"  rows="2" cols="30" wrap="soft"> </textarea> 
-<input type="checkbox" id="check5" name="check5">
-<input type="checkbox" id="check6" name="check6" ><br>
+       <textarea name="old3" id="old3"  rows="2" cols="30" wrap="soft"> </textarea> 
+       <textarea name="new3" id="new3"  rows="2" cols="30" wrap="soft"> </textarea> 
+<input type="checkbox" id="differ3" name="differ3">
+<input type="checkbox" id="approve3" name="approve3" ><br>
        <textarea name="Line4" id="Line4"  rows="1" cols="5" wrap="soft"> </textarea> 
-       <textarea name="text11" id="text11"  rows="2" cols="30" wrap="soft"> </textarea> 
-       <textarea name="text12" id="text12"  rows="2" cols="30" wrap="soft"> </textarea> 
-<input type="checkbox" id="check7" name="check7">
-<input type="checkbox" id="check8" name="check8" ><br>
+       <textarea name="old4" id="old4"  rows="2" cols="30" wrap="soft"> </textarea> 
+       <textarea name="new4" id="new4"  rows="2" cols="30" wrap="soft"> </textarea> 
+<input type="checkbox" id="differ4" name="differ4">
+<input type="checkbox" id="approve4" name="approve4" ><br>
        <textarea name="Line5" id="Line5"  rows="1" cols="5" wrap="soft"> </textarea> 
-       <textarea name="text14" id="text14"  rows="2" cols="30" wrap="soft"> </textarea> 
-       <textarea name="text15" id="text15"  rows="2" cols="30" wrap="soft"> </textarea> 
-<input type="checkbox" id="check9" name="check9">
-<input type="checkbox" id="check10" name="check10" ><br>
+       <textarea name="old5" id="old5"  rows="2" cols="30" wrap="soft"> </textarea> 
+       <textarea name="new5" id="new5"  rows="2" cols="30" wrap="soft"> </textarea> 
+<input type="checkbox" id="differ5" name="differ5">
+<input type="checkbox" id="approve5" name="approve5" ><br>
        <textarea name="Line6" id="Line6"  rows="1" cols="5" wrap="soft"> </textarea> 
 
-       <textarea name="text17" id="text17"  rows="2" cols="30" wrap="soft"> </textarea> 
-       <textarea name="text18" id="text18"  rows="2" cols="30" wrap="soft"> </textarea> 
-<input type="checkbox" id="check11" name="check11">
-<input type="checkbox" id="check12" name="check12" ><br>
+       <textarea name="old6" id="old6"  rows="2" cols="30" wrap="soft"> </textarea> 
+       <textarea name="new6" id="new6"  rows="2" cols="30" wrap="soft"> </textarea> 
+<input type="checkbox" id="differ6" name="differ6">
+<input type="checkbox" id="approve6" name="approve6" ><br>
        <textarea name="Line7" id="Line7"  rows="1" cols="5" wrap="soft"> </textarea> 
 
-       <textarea name="text20" id="text20"  rows="2" cols="30" wrap="soft"> </textarea> 
-       <textarea name="text21" id="text21"  rows="2" cols="30" wrap="soft"> </textarea> 
-<input type="checkbox" id="check13" name="check13">
-<input type="checkbox" id="check14" name="check14" ><br>
+       <textarea name="old7" id="old7"  rows="2" cols="30" wrap="soft"> </textarea> 
+       <textarea name="new7" id="new7"  rows="2" cols="30" wrap="soft"> </textarea> 
+<input type="checkbox" id="differ7" name="differ7">
+<input type="checkbox" id="approve7" name="approve7" ><br>
        <textarea name="Line8" id="Line8"  rows="1" cols="5" wrap="soft"> </textarea> 
 
-       <textarea name="text23" id="text23"  rows="2" cols="30" wrap="soft"> </textarea> 
-       <textarea name="text24" id="text24"  rows="2" cols="30" wrap="soft"> </textarea> 
-<input type="checkbox" id="check15" name="check15">
-<input type="checkbox" id="check16" name="check16" ><br>
+       <textarea name="old8" id="old8"  rows="2" cols="30" wrap="soft"> </textarea> 
+       <textarea name="new8" id="new8"  rows="2" cols="30" wrap="soft"> </textarea> 
+<input type="checkbox" id="differ8" name="differ8">
+<input type="checkbox" id="approve8" name="approve8" ><br>
        <textarea name="Line9" id="Line9"  rows="1" cols="5" wrap="soft"> </textarea> 
 
-       <textarea name="text26" id="text26"  rows="2" cols="30" wrap="soft"> </textarea> 
-       <textarea name="text27" id="text27"  rows="2" cols="30" wrap="soft"> </textarea> 
-<input type="checkbox" id="check17" name="check17">
-<input type="checkbox" id="check18" name="check18" ><br>
+       <textarea name="old9" id="old9"  rows="2" cols="30" wrap="soft"> </textarea> 
+       <textarea name="new9" id="new9"  rows="2" cols="30" wrap="soft"> </textarea> 
+<input type="checkbox" id="differ9" name="differ9">
+<input type="checkbox" id="approve9" name="approve9" ><br>
        <textarea name="Line10" id="Line10"  rows="1" cols="5" wrap="soft"> </textarea> 
 
-       <textarea name="text29" id="text29"  rows="2" cols="30" wrap="soft"> </textarea> 
-       <textarea name="text30" id="text30"  rows="2" cols="30" wrap="soft"> </textarea> 
-<input type="checkbox" id="check19" name="check19">
-<input type="checkbox" id="check20" name="check20" ><br>
+       <textarea name="old10" id="old10"  rows="2" cols="30" wrap="soft"> </textarea> 
+       <textarea name="new10" id="new10"  rows="2" cols="30" wrap="soft"> </textarea> 
+<input type="checkbox" id="differ10" name="differ10">
+<input type="checkbox" id="approve10" name="approve10" ><br>
 
        <input type="submit" value="save" name='save'class="w3-button  w3-padding-small w3-red w3-margin-bottom" >
        <input type="submit" value="back" name="back" class="w3-button w3-padding-small w3-red w3-margin-bottom">
@@ -137,29 +141,66 @@ body {font-size:16px;}
    var CurrentVersion={{CurrentVersion|tojson}};
    var previousversion={{previousversion|tojson}};
 
+   var differencescheckBox = document.getElementById('showonlydifferences');
+
+   var approvedcheckBox = document.getElementById('showonlyapproved');
+   var approvedcheckstatus =false;
+   var diffcheckstatus =false; 
+
+   function show_form(approvedcheckstatus,diffcheckstatus) {
    var idx=1;
    var chk_idx=1;
-       for (letter in doc_dff) {  
-           document.getElementById('text'+idx).value=doc_dff[letter]['LineNumber'];
-           idx=idx+1;
-           document.getElementById('text'+idx).value=doc_dff[letter]['NewSentence'];
-           if (doc_dff[letter]['differs']=="Y")  {
-              document.getElementById('check'+chk_idx).checked=true;}
-           else {
-              document.getElementById('check'+chk_idx).checked=false;}         
-           idx=idx+1;
-           chk_idx=chk_idx+1;
-           document.getElementById('text'+idx).value=doc_dff[letter]['OldSentence'];
-           if (doc_dff[letter]['approved']=="Y") {
-              document.getElementById('check'+chk_idx).checked=true;
-           } else {
-              document.getElementById('check'+chk_idx).checked=false;
-           }
-           idx=idx+1;
-           chk_idx=chk_idx+1
+   for (i=1; i<11;i++) {
+           document.getElementById('Line'+i).value='';
 
-              
-       };
+           document.getElementById('new'+i).value='';
+           document.getElementById('differ'+i).checked=false;
+           document.getElementById('old'+i).value='';
+           document.getElementById('approve'+i).checked=false;
+  }
+       for (letter in doc_dff) {  
+           if ((diffcheckstatus==true && !doc_dff[letter]['differs'] ) || (approvedcheckstatus==true && !doc_dff[letter]['approved'] )) {
+           continue }
+           else {
+           document.getElementById('Line'+idx).value=doc_dff[letter]['LineNumber'];
+
+           document.getElementById('new'+idx).value=doc_dff[letter]['NewSentence'];
+           if (doc_dff[letter]['differs']=="Y")  {
+              document.getElementById('differ'+idx).checked=true;}
+           else {
+              document.getElementById('differ'+idx).checked=false;}         
+           document.getElementById('old'+idx).value=doc_dff[letter]['OldSentence'];
+           if (doc_dff[letter]['approved']=="Y") {
+              document.getElementById('approve'+idx).checked=true;
+           } else {
+              document.getElementById('approve'+idx).checked=false;
+           }   }            idx=idx+1;   }
+
+   for (j=idx; j<11;j++) {
+           document.getElementById('Line'+j).visible=false;
+
+           document.getElementById('new'+j).visible=false;
+           document.getElementById('differ'+j).visible=false
+           document.getElementById('old'+j).visible=false
+           document.getElementById('approve'+j).visible=false
+  };
+
+
+   };
+
+   differencescheckBox.addEventListener('change', function(e){
+            approvedcheckstatus = document.getElementById('showonlyapproved').checked;
+            diffcheckstatus = document.getElementById('showonlydifferences').checked;
+   show_form(approvedcheckstatus,diffcheckstatus);
+   });
+   approvedcheckBox.addEventListener('change', function(e){
+            approvedcheckstatus = document.getElementById('showonlyapproved').checked;
+            diffcheckstatus = document.getElementById('showonlydifferences').checked;
+   show_form(approvedcheckstatus,diffcheckstatus);
+   });
+
+   show_form(approvedcheckstatus,diffcheckstatus);
+
 function w3_open() {
   document.getElementById("mySidebar").style.display = "block";
   document.getElementById("myOverlay").style.display = "block";
